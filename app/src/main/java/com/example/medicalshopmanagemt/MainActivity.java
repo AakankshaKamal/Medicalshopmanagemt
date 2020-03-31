@@ -33,10 +33,10 @@ Toolbar toolbar;
         setContentView(R.layout.activity_main);
         auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
-        if(user!=null)
-        {
-            startActivity(new Intent(MainActivity.this,UserProfile.class));
-        }
+//        if(user!=null)
+//        {
+//            startActivity(new Intent(MainActivity.this,UserProfile.class));
+//        }
         progressBar=findViewById(R.id.progessbar);
         toolbar=findViewById(R.id.tool);
         email =findViewById(R.id.loginemail);

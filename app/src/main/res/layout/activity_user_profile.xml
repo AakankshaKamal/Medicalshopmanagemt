@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".UserProfile"
     >
-
+<androidx.appcompat.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -193,6 +195,10 @@
                         android:hint="Aadhaar Number"
                         android:layout_marginBottom="80dp"
                         android:inputType="number" />
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SUBMIT"/>
 
                 </LinearLayout>
 
