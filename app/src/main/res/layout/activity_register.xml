@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Register">
+
+    <EditText
+        android:layout_marginTop="34dp"
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:hint="xxxxxx.post@yyyy.com"
+        android:textColorHint="@color/colorPrimary"
+        />
+    <EditText
+        android:padding="10dp"
+        android:layout_marginTop="4dp"
+        android:id="@+id/epass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:hint="Password:"
+        android:textColorHint="@color/colorPrimary"
+        />
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+android:text="CLICK"
+    android:id="@+id/click"
+    />
+</LinearLayout>

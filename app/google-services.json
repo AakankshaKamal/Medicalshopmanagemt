@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "790740341796",
+    "firebase_url": "https://medical-shop-a7422.firebaseio.com",
+    "project_id": "medical-shop-a7422",
+    "storage_bucket": "medical-shop-a7422.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790740341796:android:07bf0c57a994b2e0bcf4b1",
+        "android_client_info": {
+          "package_name": "com.example.medicalshopmanagemt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "790740341796-24hkm1adn4nvdlraf4i79l6b2p70uj6k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.medicalshopmanagemt",
+            "certificate_hash": "aa2ec7d77d90664b6cb5efbcb8d1903a04b609c7"
+          }
+        },
+        {
+          "client_id": "790740341796-vtni63bviql0ta7hnptpsldlieegr93d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWZ9jOdkjyWVClNceCPsl56jFjz0GurNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790740341796-vtni63bviql0ta7hnptpsldlieegr93d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
