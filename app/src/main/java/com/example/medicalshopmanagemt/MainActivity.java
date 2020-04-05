@@ -35,7 +35,7 @@ Toolbar toolbar;
         FirebaseUser user = auth.getCurrentUser();
         if(user!=null)
         {
-            startActivity(new Intent(MainActivity.this,UserProfile.class));
+            startActivity(new Intent(MainActivity.this,Dashboard.class));
         }
         progressBar=findViewById(R.id.progessbar);
         toolbar=findViewById(R.id.tool);

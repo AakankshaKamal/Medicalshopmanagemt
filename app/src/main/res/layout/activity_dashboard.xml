@@ -40,7 +40,7 @@ android:textAlignment="center"
 
             android:layout_height="wrap_content">
         <androidx.cardview.widget.CardView
-            android:id="@+id/first_one"
+            android:id="@+id/gen_qrcode"
 android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -57,7 +57,7 @@ android:layout_width="wrap_content"
                 android:layout_height="match_parent"
 >
                 <ImageView
-                    android:src="@color/Black"
+                    android:src="@drawable/qrcode"
                     android:layout_width="80dp"
                     android:layout_height="80dp"/>
                 <TextView
@@ -109,7 +109,7 @@ android:layout_width="wrap_content"
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/medicinelist"
+                android:id="@+id/vieprofile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
@@ -126,7 +126,7 @@ android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     >
                     <ImageView
-                        android:src="@color/Black"
+                        android:src="@drawable/search"
                         android:layout_width="80dp"
                         android:layout_height="80dp"/>
                     <TextView
@@ -151,6 +151,7 @@ android:layout_width="wrap_content"
                 app:cardCornerRadius="12dp"
                 android:layout_margin="12dp"
 
+
                 >
                 <LinearLayout
                     android:orientation="vertical"
@@ -159,7 +160,7 @@ android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     >
                     <ImageView
-                        android:src="@color/Black"
+                        android:src="@drawable/web"
                         android:layout_width="80dp"
                         android:layout_height="80dp"/>
                     <TextView
@@ -190,7 +191,7 @@ android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     >
                     <ImageView
-                        android:src="@color/Black"
+                        android:src="@drawable/guide"
                         android:layout_width="80dp"
                         android:layout_height="80dp"/>
                     <TextView
