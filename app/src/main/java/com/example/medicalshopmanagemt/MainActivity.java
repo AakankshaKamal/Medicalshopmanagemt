@@ -81,7 +81,7 @@ void fnc(String emailid,String password)
             if(task.isSuccessful())
             {progressBar.setVisibility(View.GONE);
                 Toast.makeText(getApplicationContext(),"LOGEDD IN SUCCESSFULLY",Toast.LENGTH_LONG);
-                Intent intent=new Intent(MainActivity.this,UserProfile.class);
+                Intent intent=new Intent(MainActivity.this,Dashboard.class);
                 startActivity(intent);
                 finish();
             }
