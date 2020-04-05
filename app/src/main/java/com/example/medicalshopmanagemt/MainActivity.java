@@ -87,7 +87,7 @@ void fnc(String emailid,String password)
             }
             else
             {
-                Toast.makeText(getApplicationContext(),"LOGing failed",Toast.LENGTH_LONG);
+                Toast.makeText(getApplicationContext(),"LOGING failed",Toast.LENGTH_LONG);
             }
 
         }

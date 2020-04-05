@@ -29,10 +29,10 @@ private CardView f1,s2;
         {
             case R.id.first_one:
                 Toast.makeText(Dashboard.this,"CLICKED ON FIRST ",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Dashboard.this,QRgenerator.class));
+                startActivity(new Intent(Dashboard.this,Mail_Activity.class));
                 break;
             case R.id.webpage:
-                startActivity(new Intent(Dashboard.this,WEbone.class));
+                startActivity(new Intent(Dashboard.this,QRgenerator.class));
                 Toast.makeText(Dashboard.this,"CLICKED ON Second ",Toast.LENGTH_SHORT).show();
                 break;
         }

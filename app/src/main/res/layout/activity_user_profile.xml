@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D5F5F5"
+
     tools:context=".UserProfile"
     >
 <androidx.appcompat.widget.Toolbar
@@ -18,7 +20,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+           >
 
 
 
@@ -26,12 +29,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+
                 app:cardCornerRadius="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:background="@drawable/gradient_background"
                     android:padding="5dp">
 
                     <TextView
@@ -49,6 +54,7 @@
                         android:layout_height="1dp"
                         android:orientation="horizontal"
                         android:layout_below="@id/label_account"
+
                         android:background="#CC000000" />
 
                     <EditText
@@ -84,6 +90,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:background="@drawable/grad"
                     android:padding="5dp">
 
                     <TextView
