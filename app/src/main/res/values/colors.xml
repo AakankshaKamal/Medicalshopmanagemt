@@ -10,5 +10,7 @@
     <color name="colorTransparentWhite">#e1dddd</color>
     <color name="colorTransparentBlack">#ad030000</color>
     <color name="colorTranparentBlue">#dc1a1e36</color>
-
+    <color name="White">#DCF3F3FA</color>
+    <color name="green">#03FC0E</color>
+    <color name="yellow">#E6B425</color>
 </resources>
