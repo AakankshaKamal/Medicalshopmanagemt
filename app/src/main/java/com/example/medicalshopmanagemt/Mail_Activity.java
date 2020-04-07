@@ -28,17 +28,33 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
 import java.io.File;
 import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.HashMap;
 
 public class Mail_Activity extends AppCompatActivity {
-    private EditText mEditTextTo;
-    private EditText mEditTextSubject;
+    private EditText mailId;
     private EditText mEditTextMessage;
     private Button genbtn, buttonSend;
     private ImageView qrcode;
-
+    private DatabaseReference mdatabase;
     LinearLayout idForSaveView;
+    private String mCurrent;
+    private FirebaseAuth mAuth;
+    private String mail;
+    private StorageReference QR_ref;
+    private  String SaveCurTime,SaveCurDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +63,22 @@ public class Mail_Activity extends AppCompatActivity {
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
 
+        mCurrent=FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        QR_ref= FirebaseStorage.getInstance().getReference().child("QR_Codes");
+
+
+        mailId=findViewById(R.id.mail_id);
 
         mEditTextMessage = findViewById(R.id.edit_text_message);
         genbtn = findViewById(R.id.genbtn);
         qrcode = findViewById(R.id.qrcode);
         idForSaveView=(LinearLayout)findViewById(R.id.idForSaveView);
         buttonSend=findViewById(R.id.button_send);
+
+
+
+        mdatabase=FirebaseDatabase.getInstance().getReference().child("users").child(mCurrent).child("QR_List");
 
         buttonSend = findViewById(R.id.button_send);
 
@@ -82,7 +108,7 @@ public class Mail_Activity extends AppCompatActivity {
 
     public void OnClickShare(View view){
 
-        Bitmap bitmap =getBitmapFromView(idForSaveView);
+        final Bitmap bitmap =getBitmapFromView(idForSaveView);
         try {
             File file = new File(this.getExternalCacheDir(),"logicchip.png");
             FileOutputStream fOut = new FileOutputStream(file);
@@ -92,8 +118,36 @@ public class Mail_Activity extends AppCompatActivity {
             file.setReadable(true, false);
             final Intent intent = new Intent(android.content.Intent.ACTION_SEND);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+
+
+            intent.putExtra(Intent.EXTRA_STREAM,Uri.fromFile(file) );
             intent.setType("image/png");
+
+//
+
+            final StorageReference filePath =QR_ref.child(Uri.fromFile(file).toString() + " .jpg");
+            filePath.putFile(Uri.fromFile(file)).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                    Toast.makeText(Mail_Activity.this, "Upload successful!", Toast.LENGTH_LONG).show();
+
+                    filePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+
+                            String url = uri.toString();
+                            mail=mailId.getText().toString();
+                            mdatabase.child(mail).child("qr").setValue(url);
+                            CurrentTime();
+
+                        }
+                    });
+                }
+            });
+
+
+
             startActivity(Intent.createChooser(intent, "Share image via"));
         } catch (Exception e) {
             e.printStackTrace();
@@ -113,6 +167,25 @@ public class Mail_Activity extends AppCompatActivity {
         }
         view.draw(canvas);
         return returnedBitmap;
+    }
+
+
+    private void CurrentTime()
+    {
+
+        Calendar calendar=Calendar.getInstance();
+
+        SimpleDateFormat currentDate=new SimpleDateFormat("MMM dd,yyyy");
+        SaveCurDate= currentDate.format(calendar.getTime());
+
+        SimpleDateFormat currentTime=new SimpleDateFormat("hh:mm a");
+        SaveCurTime= currentTime.format(calendar.getTime());
+
+
+        mdatabase.child(mail).child("date").setValue(SaveCurDate);
+        mdatabase.child(mail).child("time").setValue(SaveCurTime);
+
+
     }
 
 

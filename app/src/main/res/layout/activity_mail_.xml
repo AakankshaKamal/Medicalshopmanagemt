@@ -9,62 +9,68 @@
     android:padding="16dp"
     tools:context=".Mail_Activity"
     android:background="@drawable/for_yoy">
-<LinearLayout
-    android:layout_marginTop="25dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Message:"
-        android:textStyle="bold"
-        android:textColor="@color/Black"
-        android:textSize="23dp"
-
-        />
-
-    <EditText
-        android:id="@+id/edit_text_message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"/>
-
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/idForSaveView">
-
-    <ImageView
-        android:id="@+id/qrcode"
-        android:layout_width="321dp"
-        android:layout_height="326dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_dark_normal_background"
-       />
-
-    </LinearLayout>
-    <Button
-        android:id="@+id/genbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="   GENERATE  QR  CODE   "
-        android:background="@drawable/for_btn"
-         />
-
-    <Button
-        android:layout_marginTop="13dp"
-        android:id="@+id/button_send"
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="send"
-        android:padding="3dp"
-        android:background="@drawable/for_btn"/>
-</LinearLayout>
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Message:"
+            android:textStyle="bold"
+            android:textColor="@color/Black"
+            android:textSize="23dp"
+
+            />
+
+        <EditText
+            android:id="@+id/edit_text_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/idForSaveView">
+
+            <ImageView
+                android:id="@+id/qrcode"
+                android:layout_width="321dp"
+                android:layout_height="326dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.566"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/common_google_signin_btn_icon_dark_normal_background"
+                />
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Email-Id"
+            android:id="@+id/mail_id"></EditText>
+        <Button
+            android:id="@+id/genbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   GENERATE  QR  CODE   "
+            android:background="@drawable/for_btn"
+            />
+
+        <Button
+            android:layout_marginTop="13dp"
+            android:id="@+id/button_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="send"
+            android:padding="3dp"
+            android:background="@drawable/for_btn"/>
+    </LinearLayout>
 </ScrollView>
