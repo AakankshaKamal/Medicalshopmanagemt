@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D5F5F5"
-
+android:orientation="vertical"
     tools:context=".UserProfile"
     >
-<androidx.appcompat.widget.Toolbar
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/Blue" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,9 +39,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="23dp"
                         android:text="USERS INFORMATION"
-                        android:textSize="23sp" />
+                        android:textSize="23sp"
+                        android:paddingLeft="12dp"
+                        android:textColor="@color/yellow"
+                        android:textStyle="bold"/>
 
                     <LinearLayout
                         android:id="@+id/line1"
@@ -57,6 +55,15 @@
 
                         android:background="#CC000000" />
 
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NAME : "
+                        android:paddingLeft="12dp"
+                        android:textColor="@color/Black"
+                        android:textStyle="bold"
+                        android:background="@color/purple"/>
                     <EditText
                         android:id="@+id/label_displayName"
                         android:layout_width="match_parent"
@@ -64,15 +71,28 @@
                         android:layout_marginTop="15dp"
                         android:hint="Name"
                         android:textSize="20sp"
+                        android:textStyle="bold"
+
+                        android:textColor="@color/Black"
                         android:layout_below="@id/line1" />
 
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EMAIL :  "
+                        android:textColor="@color/Black"
+                        android:textStyle="bold"
+                        android:paddingLeft="12dp"
+                        android:background="@color/purple"/>
                     <EditText
                         android:id="@+id/label_displayEmail"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="15dp"
                         android:hint="Email"
+                        android:textStyle="bold"
+
+                        android:textColor="@color/Black"
                         android:textSize="20sp" />
 
                 </LinearLayout>
@@ -90,8 +110,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@drawable/grad"
-                    android:padding="5dp">
+                    android:background="@drawable/gradient_background"
+                    android:padding="5dp"
+                    >
 
                     <TextView
                         android:id="@+id/label_details"
@@ -99,6 +120,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Further Details"
+
+                        android:textColor="@android:color/holo_red_dark"
                         android:textSize="23sp" />
 
                     <LinearLayout
@@ -111,6 +134,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:gravity="center_horizontal">
+
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -152,7 +176,14 @@
                         </RadioGroup>
 
                     </LinearLayout>
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AGE : "
+                        android:textColor="@color/Black"
+                        android:textStyle="bold"
+                        android:paddingLeft="12dp"
+                        android:background="@color/purple"/>
                     <EditText
                         android:id="@+id/edit_age"
                         android:layout_width="match_parent"
@@ -160,10 +191,20 @@
                         android:layout_marginTop="15dp"
                         android:textSize="22dp"
                         android:hint="Age"
+                        android:textStyle="bold"
+
+                        android:textColor="@color/Black"
                         android:inputType="number" />
 
 
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ADDRESS : "
+                        android:textColor="@color/Black"
+                        android:textStyle="bold"
+                        android:background="@color/purple"
+                        android:paddingLeft="12dp" />
 
                     <EditText
                         android:textSize="22dp"
@@ -172,9 +213,19 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:hint="Address"
+                        android:textStyle="bold"
+
+                        android:textColor="@color/Black"
                         android:inputType="textMultiLine" />
 
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PINCODE :  "
+                        android:textColor="@color/Black"
+                        android:textStyle="bold"
+                        android:paddingLeft="12dp"
+                        android:background="@color/purple"/>
                     <EditText
                         android:textSize="22dp"
                         android:id="@+id/edit_pin"
@@ -182,19 +233,39 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:hint="Pincode"
-                        android:inputType="number" />
+                        android:textStyle="bold"
 
+                        android:textColor="@color/Black"
+                        android:inputType="number" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CONTACT NO : "
+                        android:textColor="@color/Black"
+                        android:textStyle="bold"
+                        android:paddingLeft="12dp"
+                        android:background="@color/purple"/>
                     <EditText
                         android:textSize="22dp"
                         android:id="@+id/edit_phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
+                        android:textStyle="bold"
+
+                        android:textColor="@color/Black"
                         android:hint="Phone Number"
                         android:inputType="phone" />
 
 
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AADHAR NO :"
+                        android:textColor="@color/Black"
+                        android:textStyle="bold"
+                        android:paddingLeft="12dp"
+                        android:background="@color/purple"/>
                     <EditText
                         android:textSize="22dp"
                         android:id="@+id/edit_aadhaar"
@@ -202,13 +273,40 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:hint="Aadhaar Number"
+                        android:textStyle="bold"
+
+                        android:textColor="@color/Black"
                         android:layout_marginBottom="80dp"
                         android:inputType="number" />
+
+                    <Button
+                        android:id="@+id/okbtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="OK (BACK TO DASHBOARD)"
+                        android:background="@drawable/for_yoy"/>
+                    <Button
+                        android:id="@+id/sharebtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SHARE PROFILE"
+                        android:background="@drawable/for_yoy"/>
+                    <Button
+                        android:id="@+id/updatebtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="UPDATE PROFILE "
+                        android:background="@drawable/for_yoy"/>
+
                     <Button
                         android:id="@+id/submitbtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="SUBMIT"/>
+                        android:text="SUBMIT"
+
+                        android:visibility="invisible"
+                        android:background="@drawable/for_yoy"/>
+
 
                 </LinearLayout>
 
@@ -221,4 +319,3 @@
 
     </ScrollView>
 
-</RelativeLayout>

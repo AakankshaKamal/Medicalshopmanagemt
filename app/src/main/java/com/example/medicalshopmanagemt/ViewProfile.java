@@ -32,10 +32,37 @@ public class ViewProfile extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                // System.out.println(post);
-                Log.d("AADHAR",user.getAadhaar());
-                Log.d("Name",user.getName());
-                Log.d("Age",user.getAge());
-                Log.d("email",user.getEmail());
+                if (user.getAadhaar().equals(""))
+                {}
+                else
+                    Log.d("AADHAR",user.getAadhaar());
+
+                if (user.getName().equals(""))
+                {}
+                else
+                    Log.d("Name", user.getName());
+
+                if (user.getAge().equals(""))
+                {}
+                else     Log.d("Age", user.getAge());
+                    //age.setText(user.getAge());
+                Log.d("email", user.getEmail());
+                if (user.getPincode().equals("")) {
+                    //    pin.setError("please enter email address");
+                    //  pin.requestFocus();}
+                }else
+                 //   pin.setText(user.getPincode());
+                if (user.getPhone().equals("")) {
+                    // phone.setError("please enter email address");
+                } //phone.requestFocus();}
+                else
+                    //phone.setText(user.getPhone());
+                if (user.getAddress().equals("")) {
+                    //   address.setError("please enter email address");
+                }// address.requestFocus();}
+                else {}
+                   // address.setText(user.getAddress());
+
 
 
             }

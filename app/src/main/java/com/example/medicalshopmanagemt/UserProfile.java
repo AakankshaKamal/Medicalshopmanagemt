@@ -30,10 +30,11 @@ import com.google.firebase.database.ValueEventListener;
 
 public class UserProfile extends AppCompatActivity {
 private EditText useremail;
-private Button btn;
+private Button sharebtn,updatebtn,okbtn;
 FirebaseAuth firebaseAuth;
 FirebaseUser firebaseUser;
 Menu menus;
+
 
     private String userId;
     //private CircleImageView profilePicture;
@@ -41,15 +42,16 @@ Menu menus;
     private EditText age, fathername, address, pin, phone, fax, aadhaar;
     private Button submit;
 
-
+String user_name;
     RadioGroup radioGroup;
-    //User user;
+    User user;
     //private static final String TAG = "AccountFragment";
     String gender = "";
     int flag = 0;
 private
     RadioButton lastButton;
     RadioButton radioButton,radioButton2,radioButton3;
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -89,7 +91,9 @@ private
     firebaseUser=firebaseAuth.getCurrentUser();
     useremail=findViewById(R.id.label_displayEmail);
     useremail.setText(firebaseUser.getEmail());
-
+sharebtn=findViewById(R.id.sharebtn);
+okbtn=findViewById(R.id.okbtn);
+updatebtn=findViewById(R.id.updatebtn);
 
         name = findViewById(R.id.label_displayName);
        // email = findViewById(R.id.label_displayEmail);
@@ -103,7 +107,19 @@ private
         aadhaar = findViewById(R.id.edit_aadhaar);
         radioGroup = findViewById(R.id.radioGroup);
         lastButton = findViewById(R.id.radio_others);
+        Intent intent = getIntent();
+//get the attached extras from the intent
+//we should use the same key as we used to attach the data.
+    // user_name = intent.getStringExtra("FLAG");
+      //  if(user_name.equals("EMPTY"))
+       // {flag=1;
+      //  Log.d("FLAG ",intent.getExtras().get("FLAG").toString());
+    //}
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+
+
+
 
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -114,34 +130,69 @@ private
             }
         });
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        //if(flag==0) {
+            DatabaseReference ref = database.getReference("users/" + firebaseUser.getUid());
+            ref.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    User user = dataSnapshot.getValue(User.class);
+                    Log.d("AADHAR", user.getAadhaar());
+                    aadhaar.setText(user.getAadhaar());
+                    Log.d("Name", user.getName());
+                    name.setText(user.getName());
+                    Log.d("Age", user.getAge());
+                    age.setText(user.getAge());
+                    Log.d("email", user.getEmail());
+                    pin.setText(user.getPincode());
+                    phone.setText(user.getPhone());
+                    address.setText(user.getAddress());
 
-        DatabaseReference ref = database.getReference("users/"+firebaseUser.getUid());
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.getValue(User.class);
-                // System.out.println(post);
-                Log.d("AADHAR", user.getAadhaar());
-                aadhaar.setText(user.getAadhaar());
-                Log.d("Name", user.getName());
-                name.setText(user.getName());
-                Log.d("Age", user.getAge());
-                age.setText(user.getAge());
-                Log.d("email", user.getEmail());
-                pin.setText(user.getPincode());
-                phone.setText(user.getPhone());
-                address.setText(user.getAddress());
-            }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
+       // }
+updatebtn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        submit.setVisibility(View.VISIBLE);
+        age.setEnabled(true);
+        aadhaar.setEnabled(true);
+        name.setEnabled(true);
+        pin.setEnabled(true);
+        phone.setEnabled(true);
+        address.setEnabled(true);
+    }
+});
+okbtn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent=new Intent(UserProfile.this,Dashboard.class);
+        startActivity(intent);
+        finish();
+    }
+});
+age.setEnabled(false);
+        aadhaar.setEnabled(false);
+        name.setEnabled(false);
+        pin.setEnabled(false);
+        phone.setEnabled(false);
+        address.setEnabled(false);
 
-            }});
-
-
+//        if(flag==1)
+//        { submit.setEnabled(true);
+//            age.setEnabled(true);
+//            aadhaar.setEnabled(true);
+//            name.setEnabled(true);
+//            pin.setEnabled(true);
+//            phone.setEnabled(true);
+//            address.setEnabled(true);}
 submit.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
+
         String nameuser,ageuser,addressuser,pinuser,phoneno,adharno;
         nameuser=name.getText().toString().trim();
         ageuser=age.getText().toString().trim();

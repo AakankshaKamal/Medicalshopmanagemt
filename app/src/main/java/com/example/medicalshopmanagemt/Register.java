@@ -80,7 +80,10 @@ clbtn.setOnClickListener(new View.OnClickListener() {
                             Log.d("Success", "createUserWithEmail:success");
                             //FirebaseUser user = mauth.getCurrentUser();
                            // updateUI(user);
-startActivity(new Intent(Register.this, Dashboard.class));
+
+Intent intent= new Intent(Register.this, UserProfile.class);
+intent.putExtra("FLAG","empty");
+startActivity(intent);
 finish();
                 }
                 else
