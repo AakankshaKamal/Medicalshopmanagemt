@@ -82,7 +82,9 @@ clbtn.setOnClickListener(new View.OnClickListener() {
                            // updateUI(user);
 
 Intent intent= new Intent(Register.this, UserProfile.class);
-intent.putExtra("FLAG","empty");
+String p="empty";
+intent.putExtra("FLAG",p);
+                    Log.d("FLAG ",p);
 startActivity(intent);
 finish();
                 }

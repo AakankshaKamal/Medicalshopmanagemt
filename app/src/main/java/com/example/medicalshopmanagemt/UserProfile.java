@@ -107,14 +107,22 @@ updatebtn=findViewById(R.id.updatebtn);
         aadhaar = findViewById(R.id.edit_aadhaar);
         radioGroup = findViewById(R.id.radioGroup);
         lastButton = findViewById(R.id.radio_others);
-        Intent intent = getIntent();
+      Intent intent=getIntent();
 //get the attached extras from the intent
 //we should use the same key as we used to attach the data.
     // user_name = intent.getStringExtra("FLAG");
       //  if(user_name.equals("EMPTY"))
        // {flag=1;
-      //  Log.d("FLAG ",intent.getExtras().get("FLAG").toString());
+user_name=intent.getStringExtra("FLAG");
     //}
+        if(user_name.equals("empty"))
+        {flag=1;}
+
+        if(flag==1) {
+            sharebtn.setEnabled(false);
+        okbtn.setEnabled(false);
+        updatebtn.setEnabled(false);
+        }
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
 
@@ -130,7 +138,7 @@ updatebtn=findViewById(R.id.updatebtn);
             }
         });
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //if(flag==0) {
+        if(flag==0) {
             DatabaseReference ref = database.getReference("users/" + firebaseUser.getUid());
             ref.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -153,7 +161,7 @@ updatebtn=findViewById(R.id.updatebtn);
 
                 }
             });
-       // }
+        }
 updatebtn.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
@@ -166,6 +174,30 @@ updatebtn.setOnClickListener(new View.OnClickListener() {
         address.setEnabled(true);
     }
 });
+        sharebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String s ="NAME :";
+                       s+= name.getText().toString();
+                s=s+"\n";
+                s+="EMAIL : "+useremail.getText().toString()+"\n";
+                s+="AADHAR NO :" +aadhaar.getText().toString();
+                s=s+"\n";
+                s=s+"CONTACT NO :"+phone.getText().toString();
+                s=s+"\n";
+                s=s+"PINCODE OF MY AREA "+pin.getText().toString();
+                s=s+"\n";
+                s=s+"AGE "+age.getText().toString();
+                s=s+"\n";
+                s=s+"OUR ADDRESS "+address.getText().toString();
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, s);
+                startActivity(Intent.createChooser(sharingIntent, "Share text via"));
+            }
+        });
 okbtn.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
@@ -181,18 +213,18 @@ age.setEnabled(false);
         phone.setEnabled(false);
         address.setEnabled(false);
 
-//        if(flag==1)
-//        { submit.setEnabled(true);
-//            age.setEnabled(true);
-//            aadhaar.setEnabled(true);
-//            name.setEnabled(true);
-//            pin.setEnabled(true);
-//            phone.setEnabled(true);
-//            address.setEnabled(true);}
+        if(flag==1)
+        { submit.setVisibility(View.VISIBLE);
+            age.setEnabled(true);
+            aadhaar.setEnabled(true);
+            name.setEnabled(true);
+            pin.setEnabled(true);
+            phone.setEnabled(true);
+            address.setEnabled(true);}
 submit.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-
+int ar=1;
         String nameuser,ageuser,addressuser,pinuser,phoneno,adharno;
         nameuser=name.getText().toString().trim();
         ageuser=age.getText().toString().trim();
@@ -200,10 +232,28 @@ submit.setOnClickListener(new View.OnClickListener() {
         pinuser=pin.getText().toString().trim();
         phoneno=phone.getText().toString().trim();
         adharno=aadhaar.getText().toString().trim();
-
+        if (nameuser.equals("")) {
+            name.setError("please fill this field");
+            name.requestFocus();ar=0;}
+        if (ageuser.equals("")) {
+            age.setError("please fill this field");
+            age.requestFocus();ar=0;}
+        if (addressuser.equals("")) {
+            address.setError("please fill this field");
+            address.requestFocus();ar=0;}
+        if (pinuser.equals("")) {
+            pin.setError("please fill this field");
+            pin.requestFocus();ar=0;}
+//        if (gender.equals("")) {
+//            radioButton.setError("please enter password");
+//            radioButton.requestFocus();}
+        if (adharno.equals("")) {
+            aadhaar.setError("please fill this field");
+            aadhaar.requestFocus();
+        ar=0;}
         String uid=firebaseUser.getUid();
-
-        User users=new User(nameuser,firebaseUser.getEmail(),uid,gender,addressuser,ageuser,pinuser,phoneno,adharno,flag);
+if(ar==1)
+{User users=new User(nameuser,firebaseUser.getEmail(),uid,gender,addressuser,ageuser,pinuser,phoneno,adharno,flag);
         users.setName(nameuser);
         users.setAadhaar(adharno);
         users.setAddress(addressuser);
@@ -225,12 +275,12 @@ submit.setOnClickListener(new View.OnClickListener() {
                 submit.setEnabled(false);
                 startActivity(new Intent(UserProfile.this,Dashboard.class));
             }
-        });
+        });}
     }
 });
 
 
-                }
+            }
             }
 
 
