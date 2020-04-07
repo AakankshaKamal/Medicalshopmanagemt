@@ -47,8 +47,7 @@ public class Mail_Activity extends AppCompatActivity {
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
 
-        mEditTextTo = findViewById(R.id.edit_text_to);
-        mEditTextSubject = findViewById(R.id.edit_text_subject);
+
         mEditTextMessage = findViewById(R.id.edit_text_message);
         genbtn = findViewById(R.id.genbtn);
         qrcode = findViewById(R.id.qrcode);

@@ -58,7 +58,7 @@ sendbtn=findViewById(R.id.sendbtn);
             public void onClick(View v) {
                 alert.setVisibility(View.VISIBLE);
                 passwrdreset.setVisibility(View.VISIBLE);
-                //sendbtn.setVisibility(View.VISIBLE);
+                sendbtn.setVisibility(View.VISIBLE);
 
 
                 sendbtn.setOnClickListener(new View.OnClickListener() {

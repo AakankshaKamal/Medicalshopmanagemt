@@ -75,22 +75,22 @@ private CardView f1,s2,s3,s4,s5;
             case R.id.gen_qrcode:
                 Toast.makeText(Dashboard.this,"CLICKED ON FIRST ",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Dashboard.this,Mail_Activity.class));
-
-            case R.id.scanqrcode:
+                break;
+                case R.id.scanqrcode:
                 Toast.makeText(Dashboard.this,"FOR SCANNING ",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Dashboard.this,QRgenerator.class));
                 break;
                 case R.id.webpage:
-            Toast.makeText(Dashboard.this,"FOR VIWING WEB PAGE ",Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(Dashboard.this,WEbone.class));
-            break;
-            case R.id.vieprofile:  startActivity(new Intent(Dashboard.this,UserProfile.class));
-            Toast.makeText(Dashboard.this,"TO VIEW YOUR PROFILE",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Dashboard.this,"FOR VIWING WEB PAGE ",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Dashboard.this,WEbone.class));
+                break;
+                case R.id.vieprofile:  startActivity(new Intent(Dashboard.this,UserProfile.class));
+                Toast.makeText(Dashboard.this,"TO VIEW YOUR PROFILE",Toast.LENGTH_SHORT).show();
             //startActivity(new Intent(Dashboard.this,Mail_Activity.class));
-            break;
+                break;
 
 
-            case R.id.guide:
+               case R.id.guide:
                 Toast.makeText(Dashboard.this,"Guide",Toast.LENGTH_SHORT).show();
                 break;
         }

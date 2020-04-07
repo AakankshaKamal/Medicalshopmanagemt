@@ -3,6 +3,7 @@ package com.example.medicalshopmanagemt;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,12 +17,16 @@ import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LifecycleObserver;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class UserProfile extends AppCompatActivity {
 private EditText useremail;
@@ -85,8 +90,10 @@ private
     useremail=findViewById(R.id.label_displayEmail);
     useremail.setText(firebaseUser.getEmail());
 
+
         name = findViewById(R.id.label_displayName);
        // email = findViewById(R.id.label_displayEmail);
+
         age = findViewById(R.id.edit_age);
         //fathername = findViewById(R.id.edit_fathersname);
         address = findViewById(R.id.edit_address);
@@ -96,6 +103,40 @@ private
         aadhaar = findViewById(R.id.edit_aadhaar);
         radioGroup = findViewById(R.id.radioGroup);
         lastButton = findViewById(R.id.radio_others);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton radioButton = (RadioButton) group.findViewById(checkedId);
+                gender = radioButton.getText().toString();
+                Log.d("gener :",gender);
+
+            }
+        });
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        DatabaseReference ref = database.getReference("users/"+firebaseUser.getUid());
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                // System.out.println(post);
+                Log.d("AADHAR", user.getAadhaar());
+                aadhaar.setText(user.getAadhaar());
+                Log.d("Name", user.getName());
+                name.setText(user.getName());
+                Log.d("Age", user.getAge());
+                age.setText(user.getAge());
+                Log.d("email", user.getEmail());
+                pin.setText(user.getPincode());
+                phone.setText(user.getPhone());
+                address.setText(user.getAddress());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }});
 
 
 submit.setOnClickListener(new View.OnClickListener() {
@@ -110,8 +151,7 @@ submit.setOnClickListener(new View.OnClickListener() {
         adharno=aadhaar.getText().toString().trim();
 
         String uid=firebaseUser.getUid();
-if(nameuser!=null)
-    flag=1;
+
         User users=new User(nameuser,firebaseUser.getEmail(),uid,gender,addressuser,ageuser,pinuser,phoneno,adharno,flag);
         users.setName(nameuser);
         users.setAadhaar(adharno);

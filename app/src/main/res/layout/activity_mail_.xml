@@ -7,47 +7,31 @@
 
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".Mail_Activity">
+    tools:context=".Mail_Activity"
+    android:background="@drawable/for_yoy">
 <LinearLayout
-    android:layout_width="wrap_content"
+    android:layout_marginTop="25dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="To:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-    <EditText
-        android:id="@+id/edit_text_to"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Subject:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-    <EditText
-        android:id="@+id/edit_text_subject"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailSubject" />
+    android:orientation="vertical"
+    >
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Message:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textStyle="bold"
+        android:textColor="@color/Black"
+        android:textSize="23dp"
+
+        />
 
     <EditText
         android:id="@+id/edit_text_message"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></EditText>
-<!--        android:gravity="start|top"-->
-<!--        android:lines="10" />-->
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"/>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,13 +54,17 @@
         android:id="@+id/genbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GENERATE QR CODE"
+        android:text="   GENERATE  QR  CODE   "
+        android:background="@drawable/for_btn"
          />
 
     <Button
+        android:layout_marginTop="13dp"
         android:id="@+id/button_send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="send" />
+        android:text="send"
+        android:padding="3dp"
+        android:background="@drawable/for_btn"/>
 </LinearLayout>
 </ScrollView>

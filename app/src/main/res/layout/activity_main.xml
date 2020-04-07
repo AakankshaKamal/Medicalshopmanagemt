@@ -98,8 +98,9 @@ android:textStyle="bold"
         android:textStyle="bold"
         android:textColor="@color/Black"
         android:text="SEND"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:layout_gravity="center"/>
+
     <ProgressBar
         android:id="@+id/progessbar"
         android:layout_marginTop="12dp"

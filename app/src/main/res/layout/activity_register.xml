@@ -15,8 +15,9 @@
 android:textStyle="bold"
         android:textColor="@color/Black"
        android:text="FILL THE FOLLOWING:"
+        android:textSize="34dp"
         android:textAlignment="center"
-
+android:background="@drawable/for_yoy"
         />
     <EditText
         android:layout_marginTop="34dp"
@@ -46,13 +47,17 @@ android:textStyle="bold"
 <Button
     android:padding="5dp"
     android:layout_marginTop="15dp"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
 android:text="SUBMIT"
-    android:background="@drawable/design"
+    android:textAlignment="center"
+
+android:textStyle="bold"
+    android:background="@drawable/for_yoy"
     android:layout_gravity="center_horizontal"
 
     android:id="@+id/click"
+
     />
     <ProgressBar
         android:layout_marginTop="80dp"

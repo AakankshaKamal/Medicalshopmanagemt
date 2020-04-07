@@ -6,37 +6,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="@color/Blue"
+    android:background="@drawable/design"
     tools:context=".Dashboard">
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_marginRight="32dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="13dp"
             android:layout_marginLeft="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
+                android:layout_marginTop="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="DASHBOARD"
 android:textAlignment="center"
                 android:textStyle="bold"
 
-                android:background="@color/Black"
-                android:textColor="@color/colorTransparentWhite"
-                android:textSize="34dp" />
+                android:background="@drawable/for_btn"
+                android:textColor="@color/colorTransparentBlack"
+                android:textSize="34dp"
+
+                />
         </RelativeLayout>
         <GridLayout
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="56dp"
             android:columnCount="2"
             android:rowCount="3"
             android:alignmentMode="alignMargins"
             android:columnOrderPreserved="false"
             android:layout_width="match_parent"
-            android:background="@color/backgroundYellow"
 
             android:layout_height="wrap_content">
         <androidx.cardview.widget.CardView
@@ -46,7 +49,7 @@ android:layout_width="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             app:cardElevation="6dp"
-            app:cardCornerRadius="12dp"
+            app:cardCornerRadius="25dp"
             android:layout_margin="12dp"
 
             >
@@ -55,6 +58,7 @@ android:layout_width="wrap_content"
                 android:padding="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/for_btn"
 >
                 <ImageView
                     android:src="@drawable/qrcode"
@@ -65,12 +69,13 @@ android:layout_width="wrap_content"
                     android:textColor="@color/purple"
                     android:textSize="18sp"
                     android:text="Generate Bill"
+                    android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="USING QR CODE"/>
+                    android:text="(USING QR CODE)"/>
 
 
             </LinearLayout>
@@ -82,7 +87,7 @@ android:layout_width="wrap_content"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="25dp"
                 android:layout_margin="12dp"
 
                 >
@@ -91,6 +96,7 @@ android:layout_width="wrap_content"
                     android:padding="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/for_btn"
                     >
                     <ImageView
                         android:src="@drawable/scanner"
@@ -101,6 +107,7 @@ android:layout_width="wrap_content"
                         android:textColor="@color/purple"
                         android:textSize="14sp"
                         android:text="SCAN QR CODE"
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -115,7 +122,7 @@ android:layout_width="wrap_content"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="25dp"
                 android:layout_margin="12dp"
 
                 >
@@ -124,7 +131,7 @@ android:layout_width="wrap_content"
                     android:padding="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    >
+                    android:background="@drawable/for_btn">
                     <ImageView
                         android:src="@drawable/search"
                         android:layout_width="80dp"
@@ -148,7 +155,7 @@ android:layout_width="wrap_content"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="25dp"
                 android:layout_margin="12dp"
 
 
@@ -158,7 +165,7 @@ android:layout_width="wrap_content"
                     android:padding="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    >
+                    android:background="@drawable/for_btn">
                     <ImageView
                         android:src="@drawable/web"
                         android:layout_width="80dp"
@@ -167,7 +174,9 @@ android:layout_width="wrap_content"
                        android:layout_marginTop="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="WEB PAGE"/>
+                        android:text="WEB PAGE"
+                        android:textColor="@color/purple"
+                        android:textStyle="bold"/>
 
 
                 </LinearLayout>
@@ -180,7 +189,7 @@ android:layout_width="wrap_content"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
 
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="25dp"
                 android:layout_margin="12dp"
 
                 >
@@ -189,6 +198,7 @@ android:layout_width="wrap_content"
                     android:padding="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/for_btn"
                     >
                     <ImageView
                         android:src="@drawable/guide"
