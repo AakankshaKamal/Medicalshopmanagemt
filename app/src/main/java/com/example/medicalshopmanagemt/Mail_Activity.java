@@ -54,7 +54,8 @@ public class Mail_Activity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private String mail;
     private StorageReference QR_ref;
-    private  String SaveCurTime,SaveCurDate;
+    private  String Time,Date,key;
+    private Button bill;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +77,14 @@ public class Mail_Activity extends AppCompatActivity {
         idForSaveView=(LinearLayout)findViewById(R.id.idForSaveView);
         buttonSend=findViewById(R.id.button_send);
 
+        bill=findViewById(R.id.gen);
+        bill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Mail_Activity.this,See_bills.class);
+                startActivity(intent);
+            }
+        });
 
 
         mdatabase=FirebaseDatabase.getInstance().getReference().child("users").child(mCurrent).child("QR_List");
@@ -137,9 +146,12 @@ public class Mail_Activity extends AppCompatActivity {
                         public void onSuccess(Uri uri) {
 
                             String url = uri.toString();
+
+
                             mail=mailId.getText().toString();
-                            mdatabase.child(mail).child("qr").setValue(url);
                             CurrentTime();
+                            mdatabase.child(mail).child(Date).child(key).child("qr").setValue(url);
+
 
                         }
                     });
@@ -176,14 +188,14 @@ public class Mail_Activity extends AppCompatActivity {
         Calendar calendar=Calendar.getInstance();
 
         SimpleDateFormat currentDate=new SimpleDateFormat("MMM dd,yyyy");
-        SaveCurDate= currentDate.format(calendar.getTime());
+        Date= currentDate.format(calendar.getTime());
 
         SimpleDateFormat currentTime=new SimpleDateFormat("hh:mm a");
-        SaveCurTime= currentTime.format(calendar.getTime());
+        Time= currentTime.format(calendar.getTime());
 
+        key=mdatabase.child(mail).child(Date).push().getKey();
 
-        mdatabase.child(mail).child("date").setValue(SaveCurDate);
-        mdatabase.child(mail).child("time").setValue(SaveCurTime);
+        mdatabase.child(mail).child(Date).child(key).child("time").setValue(Time);
 
 
     }
