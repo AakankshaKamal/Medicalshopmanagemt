@@ -56,6 +56,13 @@ private DatabaseReference mdatabase;
         See.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (Mail.getText().toString().equals("")) {
+                    Mail.setError("please fill this field");
+                    Mail.requestFocus();}
+                else  if (Date.getText().toString().equals("")) {
+                    Date.setError("please fill this field");
+                    Date.requestFocus();}
+                else
                 show();
             }
         });
@@ -75,6 +82,7 @@ private DatabaseReference mdatabase;
              Bill bills=dataSnapshot.getValue(Bill.class);
                 bill_list.add(bills);
                 adapter.notifyDataSetChanged();
+
 
             }
 

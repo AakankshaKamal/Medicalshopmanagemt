@@ -53,7 +53,7 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.MessageViewHol
       String url=bill.getQr();
       String time=bill.getTime();
 
-      Picasso.get().load(url).into(holder.image);
+      Picasso.get().load(url).error(R.drawable.error).into(holder.image);
       holder.txt.setText(time);
 
     }

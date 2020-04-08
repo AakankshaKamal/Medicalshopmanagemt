@@ -81,6 +81,11 @@ private
     }
 
     @Override
+    public void onBackPressed() {
+Toast.makeText(UserProfile.this,"YOU CANNOT GO BACK",Toast.LENGTH_LONG).show();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
@@ -106,6 +111,8 @@ updatebtn=findViewById(R.id.updatebtn);
         //fax = findViewById(R.id.edit_fax);
         aadhaar = findViewById(R.id.edit_aadhaar);
         radioGroup = findViewById(R.id.radioGroup);
+        radioButton=findViewById(R.id.radio_male);
+        radioButton2=findViewById(R.id.radio_female);
         lastButton = findViewById(R.id.radio_others);
       Intent intent=getIntent();
 //get the attached extras from the intent
@@ -154,6 +161,29 @@ user_name=intent.getStringExtra("FLAG");
                     pin.setText(user.getPincode());
                     phone.setText(user.getPhone());
                     address.setText(user.getAddress());
+                    String gender=user.getGender();
+                    if(gender.equals("Male"))
+                    {
+
+                        radioButton.setChecked(true);
+                        radioButton2.setEnabled(false);
+                        lastButton.setEnabled(false);
+
+                    }else if(gender.equals("Female"))
+                    {
+
+                        radioButton2.setChecked(true);
+                        radioButton.setEnabled(false);
+                        lastButton.setEnabled(false);
+
+                    }
+                    else
+                    {
+                        lastButton.setChecked(true);
+                        radioButton2.setEnabled(false);
+                        radioButton.setEnabled(false);
+
+                    }
 
                 }
                 @Override
@@ -168,6 +198,9 @@ updatebtn.setOnClickListener(new View.OnClickListener() {
         submit.setVisibility(View.VISIBLE);
         age.setEnabled(true);
         aadhaar.setEnabled(true);
+        lastButton.setEnabled(true);
+        radioButton.setEnabled(true);
+        radioButton2.setEnabled(true);
         name.setEnabled(true);
         pin.setEnabled(true);
         phone.setEnabled(true);
@@ -198,6 +231,7 @@ updatebtn.setOnClickListener(new View.OnClickListener() {
                 startActivity(Intent.createChooser(sharingIntent, "Share text via"));
             }
         });
+
 okbtn.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {

@@ -4,34 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".See_bills">
+    tools:context=".See_bills"
+    android:background="@drawable/alerttype">
 
     <EditText
+        android:layout_marginTop="13dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/mail"
-        android:hint="Enter-Mail"
+        android:hint="Enter Phone No"
+        android:paddingLeft="4dp"
+        android:layout_marginLeft="6dp"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:background="@color/yellow"
+        android:inputType="number"
         ></EditText>
     <EditText
+        android:paddingTop="12dp"
+        android:layout_marginTop="14dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/date"
+        android:layout_marginLeft="6dp"
         android:layout_below="@id/mail"
-        android:hint="Enter-date"
+        android:paddingLeft="4dp"
+        android:hint="Enter-date(like Apr 08,2020)"
+        android:textStyle="bold"
+        android:textColor="@color/Black"
+        android:background="@color/yellow"
         ></EditText>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="See_bills"
         android:layout_below="@id/date"
-        android:id="@+id/see"></Button>
+        android:id="@+id/see"
+        android:background="@drawable/mix"></Button>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_below="@id/see"
+       android:background="@drawable/mix"
         >
     </androidx.recyclerview.widget.RecyclerView>
 

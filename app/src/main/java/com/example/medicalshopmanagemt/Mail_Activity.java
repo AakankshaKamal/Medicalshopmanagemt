@@ -77,14 +77,7 @@ public class Mail_Activity extends AppCompatActivity {
         idForSaveView=(LinearLayout)findViewById(R.id.idForSaveView);
         buttonSend=findViewById(R.id.button_send);
 
-        bill=findViewById(R.id.gen);
-        bill.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(Mail_Activity.this,See_bills.class);
-                startActivity(intent);
-            }
-        });
+
 
 
         mdatabase=FirebaseDatabase.getInstance().getReference().child("users").child(mCurrent).child("QR_List");

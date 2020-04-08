@@ -52,10 +52,15 @@
         </LinearLayout>
 
         <EditText
+            android:paddingBottom="13dp"
+            android:paddingTop="13dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Email-Id"
-            android:id="@+id/mail_id"></EditText>
+            android:hint="Enter  your phone no for future reference"
+            android:id="@+id/mail_id"
+            android:inputType="number">
+
+        </EditText>
         <Button
             android:id="@+id/genbtn"
             android:layout_width="wrap_content"
@@ -66,16 +71,13 @@
 
         <Button
             android:layout_marginTop="13dp"
+            android:layout_marginBottom="13dp"
             android:id="@+id/button_send"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="send"
             android:padding="3dp"
             android:background="@drawable/for_btn"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="gen_bill"
-            android:id="@+id/gen"></Button>
+
     </LinearLayout>
 </ScrollView>

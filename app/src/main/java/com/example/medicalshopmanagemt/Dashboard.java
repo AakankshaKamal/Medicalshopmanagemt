@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Dashboard extends AppCompatActivity implements View.OnClickListener {
-private CardView f1,s2,s3,s4,s5;
+private CardView f1,s2,s3,s4,s5,s6;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -57,6 +57,8 @@ private CardView f1,s2,s3,s4,s5;
     f1=findViewById(R.id.gen_qrcode);
     s2=findViewById(R.id.webpage);
     s2.setOnClickListener(this);
+        s6=findViewById(R.id.list);
+        s6.setOnClickListener(this);
         s3=findViewById(R.id.scanqrcode);
         s3.setOnClickListener(this);
         s4=findViewById(R.id.vieprofile);
@@ -72,6 +74,9 @@ private CardView f1,s2,s3,s4,s5;
     public void onClick(View v) {
         switch (v.getId())
         {
+            case R.id.list:Toast.makeText(Dashboard.this,"FOR DISPLAYING LIST ",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Dashboard.this,See_bills.class));
+                break;
             case R.id.gen_qrcode:
                 Toast.makeText(Dashboard.this,"CLICKED ON FIRST ",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Dashboard.this,Mail_Activity.class));
