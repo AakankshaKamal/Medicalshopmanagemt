@@ -8,6 +8,22 @@
     android:background="@drawable/alerttype"
     >
 
+    <TextView
+        android:layout_width="347dp"
+        android:layout_height="79dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="560dp"
+        android:text="DRUG MART"
+        android:textAlignment="center"
+        android:textColor="@color/Black"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:background="@drawable/mix"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ImageView
         android:id="@+id/splashscreen"
         android:layout_width="wrap_content"
@@ -29,7 +45,7 @@
         android:layout_height="79dp"
         android:layout_marginLeft="12dp"
         android:layout_marginRight="12dp"
-        android:layout_marginBottom="220dp"
+        android:layout_marginBottom="164dp"
         android:text="MANAGE YOUR MEDICAL SHOP IN SIMPLE WAY"
         android:textAlignment="center"
         android:textColor="@color/Black"
@@ -37,7 +53,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/design"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

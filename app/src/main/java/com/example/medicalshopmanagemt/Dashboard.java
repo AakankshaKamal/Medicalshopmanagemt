@@ -97,7 +97,7 @@ private CardView f1,s2,s3,s4,s5,s6;
                 break;
 
 
-               case R.id.guide:
+            case R.id.guide:startActivity(new Intent(Dashboard.this,Guide.class));
                 Toast.makeText(Dashboard.this,"Guide",Toast.LENGTH_SHORT).show();
                 break;
         }

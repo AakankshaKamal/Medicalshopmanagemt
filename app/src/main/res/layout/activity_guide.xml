@@ -1,0 +1,118 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:stackFromBottom="true"
+    android:orientation="vertical"
+    android:transcriptMode="alwaysScroll" >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/mn">
+
+
+
+
+    <Button
+        android:layout_marginTop="56dp"
+        android:id="@+id/btnweb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" WEB DESCRIPTIONS "
+        android:textColor="@color/White"
+        android:textSize="23dp"
+        android:textStyle="italic"
+        android:layout_gravity="center"
+        android:background="@drawable/alerttype"
+        />
+            <TextView
+                android:layout_marginTop="15dp"
+                android:visibility="gone"
+                android:id="@+id/web_guide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="horizontal"
+                android:background="@drawable/for_yoy"
+                android:padding="23dp"
+                android:text="Objective:-\n\n Our web page provides information about medicines,
+generating bills, providing prescription details. This is our main objective which is further linked to \t“DRUG MART APP”\t for further process.
+\n\nWorking:-
+\n\n1.	Main page will be logged in through \t\'admin\'\t using \'admin\'\tas username and password and position also set as admin. In that page three sections has been provided to add user for pharmacist and cashier respectively and to view manager.
+\n\n2.	Now user of particular section will login to their respective section using their provided username and password.
+\n\n3.	In pharmacist page, prescription and stock details will be provided. In prescription section user will be able to view and add customer with their respective prescription details. In stock user will be able to view medicines and also will be able to add and delete medicines.
+\n\n4.	In cashier section, user i.e. cashier will be able to generate bills for respective drugs brought by the customers and which will be further processed using app.
+\n\n5.	In manager section, user will be able to view users of pharmacist and cashier section, also be able to view prescription and stock details.
+"
+                android:textStyle="italic"
+                android:textColor="@color/Black"
+                android:textSize="15dp"
+            android:typeface="monospace"
+                android:drawableBottom="@drawable/web"
+                android:drawablePadding="8dp"
+
+                />
+    <Button
+        android:visibility="gone"
+android:background="@drawable/alerttype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DONE WEb"
+        android:id="@+id/hideweb"/>
+    <Button
+        android:layout_marginTop="56dp"
+        android:id="@+id/btnapp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" APP DESCRIPTIONS "
+        android:textColor="@color/White"
+        android:textSize="23dp"
+        android:textStyle="italic"
+        android:layout_gravity="center"
+        android:background="@drawable/alerttype"
+        />
+    <TextView
+        android:layout_marginTop="15dp"
+        android:visibility="gone"
+        android:id="@+id/app_guide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal"
+        android:background="@drawable/jk"
+        android:padding="23dp"
+        android:text="Objective:- \n\nOur App “DRUG MART” is in connection with the provided web page. It is mainly responsible for handling the bill part of any medical shop ,in the form of qr codes.
+\n\nWorking:-
+\n\n1.	Any User can easily use this App by simple login procedure
+using their valid email id and creating a password .
+\n\n2.	After creating their account they will be asked to fill their details.There are provisions to update and share their details through any medium i.e. whatsapp ,email etc.
+\n\n3. In the Dashboard they are provided with the following   features:
+\n\n a)	Generate Bill: Here the user can create a qr code of the respective bill details received through web page on his email id.It could be then shared to the respective customers.
+\n\nb)	Generate Bill of Customers:Here by providing customers phone no and date of purchase ,user can see all its bill in form of qrcodes,and time of issuing bill.
+\n\nc)	Scan QR Code:Any Qr Code,whether of medicine or customers bill can be easily scanned and information is fetched.
+\n\nd)	WEB PAGE: This will open our web page on the users phone itself and he can easily use all its features there itself.
+\n\n4.The user can simply logout from this app by using the toolbar when required.        .
+"
+        android:textStyle="italic"
+        android:textColor="@color/Black"
+        android:textSize="15dp"
+        android:typeface="monospace"
+        android:drawableBottom="@drawable/logo3"
+        android:drawablePadding="8dp"
+
+        />
+    <Button
+
+        android:visibility="gone"
+        android:background="@drawable/alerttype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Done App"
+        android:id="@+id/hideapp"/>
+
+
+</LinearLayout>
+
+
+</ScrollView>

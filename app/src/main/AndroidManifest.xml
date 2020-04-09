@@ -20,6 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Guide"></activity>
         <activity android:name=".SpashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,9 +38,7 @@
         <activity android:name=".UserProfile" />
         <activity android:name=".Dashboard" />
         <activity android:name=".Register" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
