@@ -1,8 +1,7 @@
 <resources>
-    <string name="app_name">Medicalshopmanagemt</string>
+    <string name="app_name">DRUG MART</string>
     <string name="compose_email">Compose Email</string>
-    <string name="title_activity_guide">Guide</string>
-    <string name="large_text">
+
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
@@ -90,6 +89,6 @@
         "On the layout level, design your app layout to minimize opportunities for interference. "
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
-    </string>
+
     <string name="action_settings">Settings</string>
 </resources>

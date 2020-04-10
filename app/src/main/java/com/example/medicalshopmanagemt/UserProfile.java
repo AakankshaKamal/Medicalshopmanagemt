@@ -53,32 +53,32 @@ private
     RadioButton radioButton,radioButton2,radioButton3;
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater=getMenuInflater();
-        menuInflater.inflate(R.menu.sidemenu,menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-       switch(item.getItemId())
-       {
-           case R.id.dashboard:startActivity(new Intent(UserProfile.this,Dashboard.class));
-           return true;
-
-           case R.id.signout: {FirebaseAuth.getInstance().signOut();
-            Intent intent=new Intent(UserProfile.this,MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);}
-            return true;
-       default:   return super.onOptionsItemSelected(item);
-       }
-
-
-
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater menuInflater=getMenuInflater();
+//        menuInflater.inflate(R.menu.sidemenu,menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//       switch(item.getItemId())
+//       {
+//           case R.id.dashboard:startActivity(new Intent(UserProfile.this,Dashboard.class));
+//           return true;
+//
+//           case R.id.signout: {FirebaseAuth.getInstance().signOut();
+//            Intent intent=new Intent(UserProfile.this,MainActivity.class);
+//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//            startActivity(intent);}
+//            return true;
+//       default:   return super.onOptionsItemSelected(item);
+//       }
+//
+//
+//
+//    }
 
     @Override
     public void onBackPressed() {
